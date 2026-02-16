@@ -1,0 +1,112 @@
+POST http://127.0.0.1:4000/api/admin/add-doctor
+atoken: eyJhbGciOiJIUzI1NiJ9.YWRtaW5AcHJpc2NyaXB0by5jb21xd2VydHkxMjM.UCwuG7oGj4X87SEd4yoTiVs5gCcyUM5s98MO7Spw9ZY
+Content-Type: multipart/form-data; boundary=----httpyac
+
+------httpyac
+Content-Disposition: form-data; name="name"
+
+Dr. Richard James
+------httpyac
+Content-Disposition: form-data; name="password"
+
+Ashuty1234#
+------httpyac
+Content-Disposition: form-data; name="email"
+
+test@demo.com
+------httpyac
+Content-Disposition: form-data; name="degree"
+
+MBBS
+------httpyac
+Content-Disposition: form-data; name="experience"
+
+4 Years
+------httpyac
+Content-Disposition: form-data; name="about"
+
+Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.
+------httpyac
+Content-Disposition: form-data; name="address"
+
+ { "line1": "17th Cross, Richmond",
+   "line2": "Circle, Ring Road, London"
+        }
+
+------httpyac
+Content-Disposition: form-data; name="fees"
+
+40
+------httpyac
+Content-Disposition: form-data; name="speciality"
+
+General physician
+------httpyac
+Content-Disposition: form-data; name="image"; filename="doc1.png"
+Content-Type: image/png
+
+< ./doc1.png
+------httpyac--
+
+POST http://127.0.0.1:4000/api/admin/login
+Content-Type: application/json
+ 
+ {
+    "email":"admin@priscripto.com",
+    "password":"qwerty123"  
+ }
+
+POST http://127.0.0.1:4000/api/admin/all-doctors
+aToken:  eyJhbGciOiJIUzI1NiJ9.YWRtaW5AcHJpc2NyaXB0by5jb21xd2VydHkxMjM.UCwuG7oGj4X87SEd4yoTiVs5gCcyUM5s98MO7Spw9ZY
+
+
+POST http://127.0.0.1:4000/api/user/register
+Content-Type: application/json
+
+{
+   "name":"greatstack",
+"email":"user.greatStack@gmail.com",
+"password":"12345678"
+}
+
+POST http://127.0.0.1:4000/api/user/login
+Content-Type: application/json
+
+{
+"email":"user.greatStack@gmail.com",
+"password":"12345678"
+}
+
+GET http://localhost:4000/api/user/get-profile
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGMxZTMwMTA3ODY2Mzc3OGJkNTE5OSIsImlhdCI6MTc3MDkxMDUyMH0.5sYTWGRwAKWeQlYszxDsvPxLAHfhepODvuisgtxU-mg
+
+POST http://localhost:4000/api/user/update-profile
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGMxZTMwMTA3ODY2Mzc3OGJkNTE5OSIsImlhdCI6MTc3MDkxMDUyMH0.5sYTWGRwAKWeQlYszxDsvPxLAHfhepODvuisgtxU-mg
+Content-Type: multipart/form-data; boundary=httpyac
+
+--httpyac
+Content-Disposition: form-data; name="name"
+
+Test Name
+--httpyac
+Content-Disposition: form-data; name="phone"
+
+123456789
+--httpyac
+Content-Disposition: form-data; name="dob"
+
+2000-01-20
+--httpyac
+Content-Disposition: form-data; name="gender"
+
+Male
+--httpyac
+Content-Disposition: form-data; name="address"
+
+{"line1":"Main Street","line2":"2nd Road"}
+--httpyac
+Content-Disposition: form-data; name="image"; filename="profile_pic.png"
+Content-Type: image/png
+
+< ./profile_pic.png
+--httpyac--
