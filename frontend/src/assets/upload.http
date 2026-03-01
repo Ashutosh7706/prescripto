@@ -110,3 +110,21 @@ Content-Type: image/png
 
 < ./profile_pic.png
 --httpyac--
+
+POST http://localhost:4000/api/user/verifyRazorpay
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGMxZTMwMTA3ODY2Mzc3OGJkNTE5OSIsImlhdCI6MTc3MDkxMDUyMH0.5sYTWGRwAKWeQlYszxDsvPxLAHfhepODvuisgtxU-mg
+content-type: application/json
+
+{
+   "razorpay_order_id"
+: 
+"order_SIFUA41FmKeOpd"
+}
+
+POST http://localhost:4000/api/doctor/login
+content-type: application/json
+
+{
+"email":"richard@demo.com",
+"password":"Ashuty1234#"
+}  
